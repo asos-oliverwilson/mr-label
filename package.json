@@ -1,0 +1,49 @@
+{
+    "name": "github-auto-label",
+    "version": "0.0.1",
+    "description": "A small Node.js webshook server to auto-label new Github Issues or PRs on submission",
+    "main": "webhook.js",
+    "scripts": {
+        "test": "tap test/*.tap.js",
+        "start": "node github-auto-label.js"
+    },
+    "keywords": [
+        "github",
+        "label",
+        "auto",
+        "tag",
+        "in",
+        "progress",
+        "needs",
+        "review",
+        "git",
+        "webhook",
+        "service",
+        "microservice",
+        "brigade",
+        "cfa",
+        "c4sf",
+        "cfsf",
+        "code",
+        "for",
+        "san",
+        "francisco"
+    ],
+    "author": "Oliver Wilson",
+    "license": "ISC",
+    "devDependencies": {
+        "standard": "^6.0.8",
+        "tap": "^5.7.0"
+    },
+    "dependencies": {
+        "body-parser": "^1.15.0",
+        "chalk": "^1.1.3",
+        "commander": "^2.9.0",
+        "debug-log": "^1.0.0",
+        "dotenv": "^2.0.0",
+        "express": "^4.13.4",
+        "express-github-webhook": "^1.0.5",
+        "lodash": "^4.7.0",
+        "request": "^2.69.0"
+    }
+}
