@@ -18,7 +18,7 @@ var labels = {
   issue: process.env.GITHUB_ISSUE_LABELS
 }
 
-//create an array of PR labels to use
+//create an array of PR labels to use test
 if (!labels.pr || labels.pr === '') {
   labels.pr = []
 } else if (labels.pr.indexOf(',') > -1) {
