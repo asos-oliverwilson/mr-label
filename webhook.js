@@ -18,6 +18,7 @@ var labels = {
   issue: process.env.GITHUB_ISSUE_LABELS
 }
 
+//create an array of PR labels to use
 if (!labels.pr || labels.pr === '') {
   labels.pr = []
 } else if (labels.pr.indexOf(',') > -1) {
@@ -25,6 +26,8 @@ if (!labels.pr || labels.pr === '') {
 } else {
   labels.pr = [labels.pr]
 }
+
+//create an array of issue labels to use
 if (!labels.issue || labels.issue === '') {
   labels.issue = []
 } else if (labels.issue.indexOf(',') > -1) {
@@ -66,6 +69,7 @@ webhookHandler.on('pull_request', function (repo, data) {
     debug('[%s] API response %s', chalk.magenta('github'), JSON.stringify(body, null, ' '))
   })
 })
+
 webhookHandler.on('issues', function (repo, data) {
   if (repos.indexOf(repo) < 0 || data.action !== 'opened' || labels.issue.length === 0) return
   debug('[%s] Incoming webhook. adding labels %s to %s#%s', chalk.yellow('github-auto-label'), JSON.stringify(labels.issue), repo, data.issue.number)
